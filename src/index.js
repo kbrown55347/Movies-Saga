@@ -73,7 +73,15 @@ const genres = (state = [], action) => {
 };
 
 // used to store the details of clicked movie
-const detailsReducer = (state = [], action) => {
+const detailsReducer = (state = [{
+        id: '', 
+        title: '', 
+        poster: '',
+        description: '',
+        movie_id: '',
+        genre_id: '',
+        name: ''
+    }], action) => {
     switch(action.type) {
         case 'SET_DETAILS':
             console.log('in detailsReducer, action.payload:', action.payload);

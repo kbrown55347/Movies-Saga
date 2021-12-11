@@ -4,7 +4,7 @@
 ### Setup
 
 - [x] npm install, create components
-- [ ] On home/list page, setup link to go to Add Movie
+- [x] On home/list page, setup link to go to Add Movie
 
 ### DetailsView
 
@@ -17,12 +17,11 @@
 - [x] In movieList component, setup dispatch to Saga function
 - In index.js:
     - [x] create detailsReducer
-    - [ ] setup Saga function to axios get movie description from db '/api/details' route 
-    - [ ] send results to detailsReducer
+    - [x] setup Saga function to axios get movie description from db '/api/details/:id' route 
+    - [x] send results to detailsReducer
 - In Details components:
     - [ ] display details on DOM
     - [ ] create and wire Back to List button, to go to home/list page
-- [ ] import details view to app.js and setup route/link
 
 ### AddMovieForm
 
