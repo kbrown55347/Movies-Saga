@@ -34,12 +34,19 @@ function AddMovie() {
         // bundle new movie into object to dispatch
         const movieToAdd = {title, poster, description, genreId};
         console.log(movieToAdd);
-        dispatch({
+
+        if ( title === '' || poster === '' || description === '') {
+            alert('Please fill out all information fields to add movie to the list.');
+        } else if ( genreId === 0) {
+            alert('Please select a genre to add movie to the list.');
+        } else {    
+            dispatch({
             type: 'ADD_MOVIE',
             payload: movieToAdd
-        });
-        // send user back to home/list page
-        history.push('/');
+            });
+            history.push('/');
+        };
+
     }; // end handleSaveClick
 
     // send user to home/list page on click of cancel
@@ -78,10 +85,10 @@ function AddMovie() {
                         );
                     })}
                 </select>
-                
-                <button onClick={handleCancelClick}>Cancel</button>
 
-                <button onClick={handleSaveClick}>Save</button>
+                <button onClick={handleSaveClick}>Add to List</button>
+                <br></br>
+                <button onClick={handleCancelClick}>Return to List</button>
 
             </form>
         </div>
