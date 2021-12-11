@@ -9,10 +9,10 @@
 ### DetailsView
 
 - [x] On click of movie poster, route (useHistory) to /details page to display description of that movie
-- [ ] setup routes to each page
+- [x] setup routes to each page
 
 *Database to Server to Client*
-- [ ] add '/api/details' route in server.js
+- [x] add '/api/details' route in server.js
 - [ ] setup GET route in details.router to get a particular movie's details (by id) (title, poster, description AND genres -- will need a join table query for this)
 - In index.js:
     - [ ] create detailsReducer
