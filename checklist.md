@@ -3,11 +3,13 @@
 
 ### Setup
 
-- [ ] npm install, create components
+- [x] npm install, create components
+- [ ] On home/list page, setup link to go to Add Movie
 
 ### DetailsView
 
-- [ ] On click of movie poster, route (useHistory) to /details page to display description of that movie
+- [x] On click of movie poster, route (useHistory) to /details page to display description of that movie
+- [ ] setup routes to each page
 
 *Database to Server to Client*
 - [ ] add '/api/details' route in server.js
@@ -33,6 +35,5 @@
     - [ ] wire input fields to store info in local state
     - [ ] create function to dispatch local state of new movie to Saga function
 - [ ] import add movie form to app.js and setup route/link 
-- [ ] On home/list page, setup link to go to Add Movie
 
 - [ ] Add styling! MUI?
