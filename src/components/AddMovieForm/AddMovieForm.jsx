@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-// import { get } from '../../../server/routes/movie.router';
 
 function AddMovie() {
 
@@ -39,6 +38,8 @@ function AddMovie() {
             type: 'ADD_MOVIE',
             payload: movieToAdd
         });
+        // send user back to home/list page
+        history.push('/');
     }; // end handleSaveClick
 
     // send user to home/list page on click of cancel
