@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_DETAILS', fetchDetails);
+    yield takeEvery('FETCH_GENRES', fetchGenres);
 };
 
 function* fetchAllMovies() {
@@ -44,10 +45,27 @@ function* fetchDetails(action) {
             payload: response.data
         });
     } catch {
-        console.log('fetch details error');
-    }
+        console.log('fetchDetails error');
+    };
 } // end fetchDetails
 
+// Saga function to GET genres from DB
+function* fetchGenres(action) {
+    try {
+        console.log('in fetchGenres', action)
+        const response = yield axios({
+            method: 'GET',
+            url: '/api/genre'
+        });
+        // update genres reducer
+        yield put({
+            type: 'SET_GENRES',
+            payload: response.data
+        })
+    } catch {
+        console.log('fetchGenres error');
+    };
+}; // end fetchGenres
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -84,7 +102,7 @@ const detailsReducer = (state = [{
     }], action) => {
     switch(action.type) {
         case 'SET_DETAILS':
-            console.log('in detailsReducer, action.payload:', action.payload);
+            // console.log('in detailsReducer, action.payload:', action.payload);
             return action.payload;
         default:
             return state;
