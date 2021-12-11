@@ -1,15 +1,28 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './MovieList.css'
+import { useHistory } from 'react-router-dom';
 
 function MovieList() {
 
     const dispatch = useDispatch();
     const movies = useSelector(store => store.movies);
+    const history = useHistory();
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
+
+    // create function on click of image
+    const handleImageClick = (event) => {
+        // send dispatch to Saga function with movie's id
+        dispatch({
+            type: 'FETCH_DETAILS',
+            payload: event.target.id
+        });
+        // route to /details page
+        history.push('/details');
+    }; // end handleImageClick
 
     return (
         <main>
@@ -17,9 +30,13 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div key={movie.id}>
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img 
+                            id={movie.id}
+                            src={movie.poster} 
+                            alt={movie.title}
+                            onClick={handleImageClick}/>
                         </div>
                     );
                 })}

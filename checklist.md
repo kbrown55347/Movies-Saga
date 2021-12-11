@@ -3,24 +3,25 @@
 
 ### Setup
 
-- [ ] npm install, create components
+- [x] npm install, create components
+- [x] On home/list page, setup link to go to Add Movie
 
 ### DetailsView
 
-- [ ] On click of movie poster, route (useHistory) to /details page to display description of that movie
+- [x] On click of movie poster, route (useHistory) to /details page to display description of that movie
+- [x] setup routes to each page
 
-*Database to Server to Client*
-- [ ] add '/api/details' route in server.js
-- [ ] setup GET route in details.router to get a particular movie's details (by id) (title, poster, description AND genres -- will need a join table query for this)
+*Client to Server to Database*
+- [x] add '/api/details' route in server.js
+- [x] setup GET route in details.router to get a particular movie's details (by id) (will need a join table query for this)
+- [x] In movieList component, setup dispatch to Saga function
 - In index.js:
-    - [ ] create detailsReducer
-    - [ ] setup Saga function to axios get movie description from db '/api/details' route 
-    - [ ] send results to detailsReducer
+    - [x] create detailsReducer
+    - [x] setup Saga function to axios get movie description from db '/api/details/:id' route 
+    - [x] send results to detailsReducer
 - In Details components:
-    - [ ] setup dispatch to Saga function for details
-    - [ ] display details on DOM
-    - [ ] create and wire Back to List button, to go to home/list page
-- [ ] import details view to app.js and setup route/link
+    - [x] display details on DOM
+    - [x] create and wire Back to List button, to go to home/list page
 
 ### AddMovieForm
 
@@ -33,6 +34,5 @@
     - [ ] wire input fields to store info in local state
     - [ ] create function to dispatch local state of new movie to Saga function
 - [ ] import add movie form to app.js and setup route/link 
-- [ ] On home/list page, setup link to go to Add Movie
 
 - [ ] Add styling! MUI?
