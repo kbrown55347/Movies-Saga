@@ -15,11 +15,9 @@ function MovieList() {
 
     // create function on click of image
     const handleImageClick = (event) => {
-        // get id from image clicked
-        console.log(event.target.id);
         // send dispatch to Saga function with movie's id
         dispatch({
-            type: 'ADD_DETAILS',
+            type: 'FETCH_DETAILS',
             payload: event.target.id
         });
         // route to /details page
