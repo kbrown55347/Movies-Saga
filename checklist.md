@@ -26,13 +26,13 @@
 ### AddMovieForm
 
 - Display on DOM:
-    - input field (movie title), input field (movie poster image URL), textarea (description) and dropdown (for genres)
-    - cancel button, route to home/list page
-    - save button, save inputs in database and bring user to home/list page (POST route already created)
-- [ ] In index.js, create Saga function to POST new movie info to movies reducer & to genres reducer
+    - [x] input field (movie title), input field (movie poster image URL), textarea (description) and dropdown (for genres)
+    - [x] cancel button, route to home/list page
+    - [ ] save button, save inputs in database and bring user to home/list page (POST route already created)
+- [x] In index.js, create Saga function to POST new movie info to db
 - In AddMovieForm component:
-    - [ ] wire input fields to store info in local state
-    - [ ] create function to dispatch local state of new movie to Saga function
-- [ ] import add movie form to app.js and setup route/link 
+    - [x] wire input fields to store info in local state
+    - [x] create function to dispatch local state of new movie to Saga function
+- [x] import add movie form to app.js and setup route/link 
 
 - [ ] Add styling! MUI?
