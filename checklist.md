@@ -28,7 +28,7 @@
 - Display on DOM:
     - [x] input field (movie title), input field (movie poster image URL), textarea (description) and dropdown (for genres)
     - [x] cancel button, route to home/list page
-    - [ ] save button, save inputs in database and bring user to home/list page (POST route already created)
+    - [x] save button, save inputs in database and bring user to home/list page (POST route already created)
 - [x] In index.js, create Saga function to POST new movie info to db
 - In AddMovieForm component:
     - [x] wire input fields to store info in local state

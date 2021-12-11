@@ -29,8 +29,8 @@ function AddMovie() {
         });
     };
 
-    // create function to handle click of save button
-    const handleSaveClick = () => {
+    // create function to handle click of add button
+    const handleAddClick = () => {
         // bundle new movie into object to dispatch
         const movieToAdd = {title, poster, description, genreId};
         console.log(movieToAdd);
@@ -47,10 +47,10 @@ function AddMovie() {
             history.push('/');
         };
 
-    }; // end handleSaveClick
+    }; // end handleAddClick
 
     // send user to home/list page on click of cancel
-    const handleCancelClick = () => {
+    const handleReturnClick = () => {
         history.push('/');
     };
 
@@ -86,9 +86,9 @@ function AddMovie() {
                     })}
                 </select>
 
-                <button onClick={handleSaveClick}>Add to List</button>
+                <button onClick={handleAddClick}>Add to List</button>
                 <br></br>
-                <button onClick={handleCancelClick}>Return to List</button>
+                <button onClick={handleReturnClick}>Return to List</button>
 
             </form>
         </div>
