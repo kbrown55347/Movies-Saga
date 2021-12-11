@@ -6,12 +6,16 @@ function AddMovie() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    
+
     // make genres reducer accessible here
     const genres = useSelector(store => store.genres)
 
-    // create local state for genre choice
+    // create local states for genre choice, movie title, 
+    // movie poster url and movie description
     let [genreId, setGenreId] = useState(0);
+    let [title, setTitle] = useState('');
+    let [poster, setPoster] = useState('');
+    let [description, setDescription] = useState('');
 
     // get genres on page load
     useEffect(() => {
@@ -25,19 +29,38 @@ function AddMovie() {
         });
     };
 
+    // create function to handle click of save button
+    const handleSaveClick = () => {
+        // bundle new movie into object to dispatch
+        const movieToAdd = {title, poster, description, genreId};
+        // console.log(movieToAdd);
+        dispatch({
+            type: 'ADD_MOVIE',
+            payload: movieToAdd
+        });
+    }; // end handleSaveClick
+
     // send user to home/list page on click of cancel
     const handleCancelClick = () => {
         history.push('/');
-    }
-
-    console.log('in AddMovieForm', genres)
+    };
 
     return (
         <div>
             <form>
-                <input type='text' placeholder='Title' />
-                <input type='text' placeholder='Poster Image' />
-                <textarea type='text' placeholder='Description' />
+                <input type='text' 
+                    value={title}
+                    placeholder='Title'
+                    onChange={(event) => setTitle(event.target.value)}/>
+                <input type='text' 
+                    value={poster}
+                    placeholder='Poster Image'
+                    onChange={(event) => setPoster(event.target.value)}/>
+                <textarea type='text'
+                    value={description} 
+                    placeholder='Description' 
+                    onChange={(event) => setDescription(event.target.value)}/>
+
                 {/* drop down with database genres */}
                 <select value={genreId}
                     onChange={(evt) => setGenreId(evt.target.value)}>
@@ -56,7 +79,7 @@ function AddMovie() {
                 
                 <button onClick={handleCancelClick}>Cancel</button>
 
-                <button>Save</button>
+                <button onClick={handleSaveClick}>Save</button>
 
             </form>
         </div>

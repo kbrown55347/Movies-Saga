@@ -26,9 +26,9 @@
 ### AddMovieForm
 
 - Display on DOM:
-    - input field (movie title), input field (movie poster image URL), textarea (description) and dropdown (for genres)
-    - cancel button, route to home/list page
-    - save button, save inputs in database and bring user to home/list page (POST route already created)
+    - [x] input field (movie title), input field (movie poster image URL), textarea (description) and dropdown (for genres)
+    - [x] cancel button, route to home/list page
+    - [ ] save button, save inputs in database and bring user to home/list page (POST route already created)
 - [ ] In index.js, create Saga function to POST new movie info to movies reducer & to genres reducer
 - In AddMovieForm component:
     - [ ] wire input fields to store info in local state
