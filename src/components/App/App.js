@@ -12,7 +12,6 @@ function App() {
       <Router>  
       <header>
       <h1>The Movies Saga!</h1>
-      <Link to="/">Home</Link>
       <br></br>
       <Link to="/add-movie">Add New Movie</Link>
       </header>      

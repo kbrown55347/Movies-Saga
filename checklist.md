@@ -20,8 +20,8 @@
     - [x] setup Saga function to axios get movie description from db '/api/details/:id' route 
     - [x] send results to detailsReducer
 - In Details components:
-    - [ ] display details on DOM
-    - [ ] create and wire Back to List button, to go to home/list page
+    - [x] display details on DOM
+    - [x] create and wire Back to List button, to go to home/list page
 
 ### AddMovieForm
 
