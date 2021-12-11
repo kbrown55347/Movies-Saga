@@ -37,7 +37,12 @@ function* fetchDetails(action) {
             method: 'GET',
             url: `/api/details/${action.payload}`
         });
-        
+        // update details Reducer
+        // console.log('in fetchDetails, response.data', response.data)
+        yield put({
+            type: 'SET_DETAILS',
+            payload: response.data
+        });
     } catch {
         console.log('fetch details error');
     }
@@ -68,20 +73,22 @@ const genres = (state = [], action) => {
 };
 
 // used to store the details of clicked movie
-const detailsReducer = (state = ['details reducer'], action) => {
-    // switch(action.type) {
-    //     case 'SET_DETAILS':
-    //         return action.payload;
-    //     default:
+const detailsReducer = (state = [], action) => {
+    switch(action.type) {
+        case 'SET_DETAILS':
+            console.log('in detailsReducer, action.payload:', action.payload);
+            return action.payload;
+        default:
             return state;
     }
-// };
+};
 
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
+        detailsReducer
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
