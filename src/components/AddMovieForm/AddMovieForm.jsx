@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+// import { get } from '../../../server/routes/movie.router';
 
 function AddMovie() {
 
@@ -33,7 +34,7 @@ function AddMovie() {
     const handleSaveClick = () => {
         // bundle new movie into object to dispatch
         const movieToAdd = {title, poster, description, genreId};
-        // console.log(movieToAdd);
+        console.log(movieToAdd);
         dispatch({
             type: 'ADD_MOVIE',
             payload: movieToAdd
