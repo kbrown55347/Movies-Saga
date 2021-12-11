@@ -1,9 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function AddMovie() {
 
     const dispatch = useDispatch();
+    const history = useHistory();
+    
     // make genres reducer accessible here
     const genres = useSelector(store => store.genres)
 
@@ -21,6 +24,11 @@ function AddMovie() {
             type: 'FETCH_GENRES'
         });
     };
+
+    // send user to home/list page on click of cancel
+    const handleCancelClick = () => {
+        history.push('/');
+    }
 
     console.log('in AddMovieForm', genres)
 
@@ -46,6 +54,10 @@ function AddMovie() {
                     })}
                 </select>
                 
+                <button onClick={handleCancelClick}>Cancel</button>
+
+                <button>Save</button>
+
             </form>
         </div>
     );
