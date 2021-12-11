@@ -11,15 +11,15 @@
 - [x] On click of movie poster, route (useHistory) to /details page to display description of that movie
 - [x] setup routes to each page
 
-*Database to Server to Client*
+*Client to Server to Database*
 - [x] add '/api/details' route in server.js
-- [ ] setup GET route in details.router to get a particular movie's details (by id) (title, poster, description AND genres -- will need a join table query for this)
+- [x] setup GET route in details.router to get a particular movie's details (by id) (will need a join table query for this)
+- [x] In movieList component, setup dispatch to Saga function
 - In index.js:
-    - [ ] create detailsReducer
+    - [x] create detailsReducer
     - [ ] setup Saga function to axios get movie description from db '/api/details' route 
     - [ ] send results to detailsReducer
 - In Details components:
-    - [ ] setup dispatch to Saga function for details
     - [ ] display details on DOM
     - [ ] create and wire Back to List button, to go to home/list page
 - [ ] import details view to app.js and setup route/link

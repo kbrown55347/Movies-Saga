@@ -26,8 +26,17 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
-        
-}
+};
+
+// Saga function to GET details of movie from database
+function* fetchDetails() {
+    try {
+
+    } catch {
+        console.log('get details error');
+    }
+} // end fetchDetails
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -40,7 +49,7 @@ const movies = (state = [], action) => {
         default:
             return state;
     }
-}
+};
 
 // Used to store the movie genres
 const genres = (state = [], action) => {
@@ -50,7 +59,17 @@ const genres = (state = [], action) => {
         default:
             return state;
     }
-}
+};
+
+// used to store the details of clicked movie
+const detailsReducer = (state = ['details reduver'], action) => {
+    // switch(action.type) {
+    //     case 'SET_DETAILS':
+    //         return action.payload;
+    //     default:
+            return state;
+    }
+// };
 
 // Create one store that all components can use
 const storeInstance = createStore(

@@ -3,6 +3,7 @@
 function DetailsView() {
     
     
+    
     return (
         <div>
             <p>Here are my details!</p>
