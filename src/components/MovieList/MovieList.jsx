@@ -26,7 +26,10 @@ function MovieList() {
 
     return (
         <main>
-            <h1>MovieList</h1>
+            <div>
+                <h1 className="list_title">Movie List</h1>
+                <p className="directions">Click on a movie poster to get a description of that movie.</p>
+            </div>
             <section className="movies">
                 {movies.map(movie => {
                     return (

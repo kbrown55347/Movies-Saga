@@ -2,6 +2,15 @@ main {
     padding: 2em;
 }
 
+.list_title {
+    border-bottom: 1px solid grey;
+    padding-bottom: 5px;
+}
+
+.directions {
+    color: grey
+}
+
 .movies {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

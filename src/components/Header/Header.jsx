@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     // to customize color
     root: {
-        backgroundColor: "#CB793A",
-        border: "solid #d4915e 2px",
+        backgroundColor: "#d4915e",
+        border: "solid #CB793A 2px",
     },
     navlinks: {
         marginLeft: theme.spacing(5),
@@ -28,11 +28,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Header() {
+
+// MUI navbar
+function Navbar() {
     const classes = useStyles();
 
     return (
-        <AppBar position="static" className={classes.root}>
+        <AppBar position="sticky" className={classes.root}>
             <CssBaseline />
             <Toolbar>
                 <Typography variant="h4" className={classes.title}>
@@ -50,4 +52,4 @@ function Header() {
         </AppBar>
     );
 }
-export default Header;
+export default Navbar;

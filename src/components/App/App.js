@@ -5,15 +5,15 @@ import MovieList from '../MovieList/MovieList';
 // import components
 import DetailsView from '../DetailsView/DetailsView';
 import AddMovie from '../AddMovieForm/AddMovieForm';
-import Header from '../Header/Header';
+import Navbar from '../Header/Header';
 
 function App() {
   return (
     <div className="App">
       <Router> 
 
-        {/* Headers page */}
-        <Header />
+        {/* MUI navbar */}
+        <Navbar />
 
         <Route path="/" exact>
           <MovieList />
@@ -30,6 +30,7 @@ function App() {
         </Route>
 
       </Router>
+
     </div>
   );
 }
