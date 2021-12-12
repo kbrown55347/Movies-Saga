@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
     const sqlValues = [movieIdDetailsToDisplay]
     pool.query(sqlText, sqlValues)
         .then(result => {
-            console.log ('in GET /api/details route, result:', result.rows);
+            console.log('in GET /api/details route, result:', result.rows);
             res.send(result.rows);
         })
         .catch(err => {

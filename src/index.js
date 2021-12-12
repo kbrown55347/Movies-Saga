@@ -81,7 +81,7 @@ function* addNewMovie(action) {
         yield put({
             type: 'FETCH_MOVIES'
         })
-    } catch(err) {
+    } catch (err) {
         console.error('Error in addNewMovie', err);
     }
 }; // end addNewMovie
@@ -113,15 +113,15 @@ const genres = (state = [], action) => {
 
 // used to store the details of clicked movie
 const detailsReducer = (state = [{
-        id: '', 
-        title: '', 
-        poster: '',
-        description: '',
-        movie_id: '',
-        genre_id: '',
-        name: ''
-    }], action) => {
-    switch(action.type) {
+    id: '',
+    title: '',
+    poster: '',
+    description: '',
+    movie_id: '',
+    genre_id: '',
+    name: ''
+}], action) => {
+    switch (action.type) {
         case 'SET_DETAILS':
             // console.log('in detailsReducer, action.payload:', action.payload);
             return action.payload;
@@ -147,7 +147,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')

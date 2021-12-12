@@ -1,4 +1,4 @@
-import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import MovieList from '../MovieList/MovieList';
 
@@ -10,7 +10,7 @@ import Navbar from '../Header/Header';
 function App() {
   return (
     <div className="App">
-      <Router> 
+      <Router>
 
         {/* MUI navbar */}
         <Navbar />
@@ -18,7 +18,7 @@ function App() {
         <Route path="/" exact>
           <MovieList />
         </Route>
-        
+
         {/* Details page */}
         <Route path="/details" exact>
           <DetailsView />
