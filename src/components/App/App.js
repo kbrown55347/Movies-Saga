@@ -5,16 +5,16 @@ import MovieList from '../MovieList/MovieList';
 // import components
 import DetailsView from '../DetailsView/DetailsView';
 import AddMovie from '../AddMovieForm/AddMovieForm';
+import Header from '../Header/Header';
 
 function App() {
   return (
     <div className="App">
-      <Router>  
-      <header>
-      <h1>The Movies Saga!</h1>
-      <br></br>
-      <Link to="/add-movie">Add New Movie</Link>
-      </header>      
+      <Router> 
+
+        {/* Headers page */}
+        <Header />
+
         <Route path="/" exact>
           <MovieList />
         </Route>

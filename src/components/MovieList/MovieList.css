@@ -1,7 +1,11 @@
+main {
+    padding: 2em;
+}
+
 .movies {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
     flex-wrap: wrap;    
 };
 
@@ -18,5 +22,5 @@
 
 /* Add some padding inside the card container */
 .container {
-    padding: 2px 16px;
+    padding: 0.5em 0.5em;
 }
