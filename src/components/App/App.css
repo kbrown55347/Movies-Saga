@@ -2,12 +2,14 @@
   text-align: center;
 }
 
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+header {
+  background-color: #CB793A;
   color: white;
+  padding: 1em;
+  font-size: 25px;
+  text-align: center;
+  border: 2px solid rgb(4, 78, 78);
+  border-radius: 15px;
 }
 
 .App-title {

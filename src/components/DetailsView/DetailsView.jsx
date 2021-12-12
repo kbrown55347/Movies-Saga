@@ -1,5 +1,10 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+// import component CSS
+import './DetailsView.css';
+// import MUI button and box
+import { Button } from '@mui/material';
+import Box from '@material-ui/core/Box';
 
 function DetailsView() {
 
@@ -7,40 +12,42 @@ function DetailsView() {
     // access detailsReducer
     const detailsReducer = useSelector(store => store.detailsReducer);
 
-    // function to bring user back to movies list page on click
-    const handleButtonClick = () => {
+    // return to home/list view on click of button
+    const handleBackToListClick = () => {
         history.push('/');
-    }
-    
+    } // end handleBackToListClick
+
     return (
-        <div>
-            <h2>Movie Details</h2>
-            <div>
-                {/* only need to display title once */}
-                <p>Movie Title: {detailsReducer[0].title}</p>
-                <br></br>
-                <img
-                    // only need to display poster once 
-                    src={detailsReducer[0].poster}
-                    alt='Movie Poster'
-                />
-                <ul>
-                    {/* map through reducer to display each 
-                    genre associated with movie */}
-                    {detailsReducer.map(genre => (
-                        <li key={genre.id}>
-                            {/* display genre name */}
-                            {genre.name}
-                        </li>
-                    ))}
-                </ul>
-                {/* only need to display description once */}
-                <p>Movie Description: {detailsReducer[0].description}</p>
-            </div>
+        <main>
+            <h1 className="details_title">Movie Details</h1>
 
-            <button onClick={handleButtonClick}>See Movies List</button>
+            <h3>{detailsReducer[0].title}</h3>
+            <img
+                // only need to display poster once 
+                src={detailsReducer[0].poster}
+                alt='Movie Poster'
+            />
 
-        </div>
+            {/* only need to display title once */}
+            <p><b>Genres: </b></p>
+            {/* // map through detailsReduce and display each genre name */}
+            {detailsReducer.map(genre => (
+                <div key={genre.id}>
+                    {genre.name}
+                </div>
+            ))}
+
+            {/* only need to display description once */}
+            <p><b>Description:</b> {detailsReducer[0].description}</p>
+
+            <Box mt={3}>
+                <Button
+                    variant="contained"
+                    style={{ backgroundColor: 'white', color: 'black' }}
+                    onClick={handleBackToListClick}>Back To List</Button>
+            </Box>
+
+        </main>
     );
 } // end DetailsView
 
