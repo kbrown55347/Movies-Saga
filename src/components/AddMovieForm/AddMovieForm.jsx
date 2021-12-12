@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // import MUI for buttons and input fields
 import { Button, TextField, NativeSelect } from '@mui/material';
-
 import Box from '@material-ui/core/Box';
-import Grid from '@mui/material/Grid';
 
 // import component CSS
 import './AddMovieForm.css';
@@ -65,7 +63,7 @@ function AddMovie() {
     return (
         <main>
             <h1 className="add_movie_title">Add New Movie</h1>
-            <p className="directions">All fields must be filled in and a genre selected to add a new movie to the movie list.</p>
+            <p className="directions">Fill out all fields and select a genre to add a new movie to the movie list.</p>
             <form>
 
                 <Box mt={3}>
