@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
 // import component CSS
 import './DetailsView.css';
 // import MUI button and box
@@ -11,6 +12,10 @@ function DetailsView() {
     const history = useHistory();
     // access detailsReducer
     const detailsReducer = useSelector(store => store.detailsReducer);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     // return to home/list view on click of button
     const handleBackToListClick = () => {

@@ -26,6 +26,7 @@ function AddMovie() {
     // get genres on page load
     useEffect(() => {
         getGenres();
+        window.scrollTo(0, 0);
     }, []);
 
     // created function to dispatch to get genres

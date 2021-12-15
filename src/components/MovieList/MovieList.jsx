@@ -11,6 +11,7 @@ function MovieList() {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
+        window.scrollTo(0, 0);
     }, []);
 
     // create function on click of image
