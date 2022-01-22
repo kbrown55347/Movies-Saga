@@ -43,7 +43,7 @@ On the home page, when a poster image is clicked, I setup functionality for that
 
 ## Built With
 
-- React, Redux, JavaScript, SQL, Node.js, Express.js, MUI, HTML, CSS
+- HTML, CSS, JavaScript, Node.js, Express.js, React, Material UI, Redux, Redux-Saga, PostgreSQL
 
 ## Acknowledgment
 
